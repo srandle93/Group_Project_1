@@ -45,10 +45,31 @@
 
         <div class="row quiz">
             <div class="col-4" id="left">Form and Score</div>
-            <div class="col-8" id="right">Questions</div>
+            <div class="col-8" id="right">
+                <h1>Let's Play!</h1>
+
+                <!--Label that does not get overwritten-->
+                <label for"question-display">Question:</label>
+                
+                <!--Text with Span id that gets populated with question from API-->
+                <p><span id="question-display"></span></p>
+
+                <!--Label that does not get overwritten-->
+                <label for"answer-display">Answer:</label>
+
+                <!--Text with Span id that gets populated with answers from API-->
+                <p><span id="answers-display">Submit</span></p>
+
+                <!--Button that is connected to on-click function to call API-->
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                
+
+            </div>
         </div>
 
     </div>
+
+    <!--Footer of Application-->
 
 
     <!--Bootstrap JavaScript-->
