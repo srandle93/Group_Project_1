@@ -1,4 +1,6 @@
 //TODO: validate form email
+//Clear form once successfully logged in
+//multiple users on different browsers
 //Firebase
 const config = {
   apiKey: "AIzaSyC8hpnmehoFY4yxN5YTkKa6eJ6LGU23ECc",
@@ -13,8 +15,6 @@ firebase.initializeApp(config);
 database = firebase.database();
 
 $(document).ready(() => {
-  $(".quiz").hide();
-  $("#logOut").hide();
 
   //Click event for login button
   $("#login").click(event => {
@@ -64,9 +64,11 @@ $(document).ready(() => {
       console.log(firebaseUser);
       console.log(firebaseUser.uid);
       $("#logOut").show();
+      $(".quiz").show();
     } else {
       console.log("not logged in");
       $("#logOut").hide();
+      $(".quiz").hide();
     }
   });
 });
