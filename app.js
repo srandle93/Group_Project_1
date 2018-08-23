@@ -24,30 +24,42 @@
 //  // Uploads user data to the database
 //   database.ref().push(newUser);
 
-  var queryURL = "https://opentdb.com/api.php?amount=10" +
-        question;
- 
-  var questionBtn = $("<button id='get-question'>").text("New Question");
+  var queryURL = "https://opentdb.com/api.php?amount=10" 
+        ;
+  // var question = [];
+  // var correctAnswer = [];
+  // var incorrectAnswer = [];
 
+  var results = { question: "",
+                  correctAnswer: "",
+                  incorrectAnswer: ""
+  }
+//  var question = queryURL.question[i];
+  // var questionBtn = document.getElementById("newQuestion");
+  
+    
     $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response){
   //  To gather and display question and where to display question
-    $(questionBtn).on("click", function(event){
-    var questionDiv = $("#questionDiv").val();
-    var question = response.question;
-    questionDiv.append(question);
+    $("#newQuestion").click(function(){
+    // question = response.question;
+    // console.log(this.response)
+    $("#question-display").load(queryURL);
+    for(var i = 0; i<results.question.length; i++){
+    $("#question-display").load(queryURL);
+    
+
+    }
     });
     
     // To collect answer and not show it. Instead we want to 
     // make an if else statement to add or not add points.
-    $("#submit-btn").on("click", function(event){
+    $("#submit").on("click", function(event){
       event.preventDefult();
       var answerDiv = $("#answerDiv").val();
       var answer = response.answer;
       
     });
-    
-
   })
