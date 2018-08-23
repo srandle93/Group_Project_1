@@ -1,7 +1,6 @@
 //TODO: validate form email:
 
-//Clear form once successfully logged in
-//password validate aka - if not correct - give message
+//validate actual email exists
 
 //Firebase
 const config = {
@@ -36,7 +35,10 @@ $(document).ready(() => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
-      
+      if (error) {
+        $("#password").val("");
+        $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('your-class');
+      }
     });
   });
   $("#signUp").click(event => {
@@ -55,12 +57,19 @@ $(document).ready(() => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
+      if (error) {
+        $("#password").val("");
+        $("#email").val("");
+        $("#email").attr("placeholder", "Email already Registered").addClass('your-class');
+      }
     });
   });
   //Logout Event
   $("#logOut").click(event => {
     event.preventDefault();
     firebase.auth().signOut();
+    $("#password").val("");
+    $("#password").attr("placeholder", "Password").removeClass("your-class");
   });
   //Verify status of login/logout
   firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -69,10 +78,12 @@ $(document).ready(() => {
       console.log(firebaseUser.uid);
       $("#logOut").show();
       $(".quiz").show();
+      $("#form").hide();
     } else {
       console.log("not logged in");
       $("#logOut").hide();
       $(".quiz").hide();
+      $("#form").show();
     }
   });
   //Validate form
