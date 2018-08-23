@@ -12,10 +12,26 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!--Application CSS-->
+
     <link rel "stylesheet" type="text/css" href="css/style.css">
+
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
     <title>Name of Application</title>
+    <style>
+        #email.error {
+            border: 2px dotted red;
+        }
+        #password.error {
+            border: 2px dotted red;
+        }
+        .quiz {
+            margin-bottom: 500px;
+        }
+        .your-class::-webkit-input-placeholder {
+    color: red;
+}
+    </style>
 </head>
 
 <body>
@@ -35,13 +51,13 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password" minlength="6">
             </div>
             <button type="submit" class="btn btn-primary" id="login">Log in</button>
             <button type="submit" class="btn btn-primary" id="signUp">Sign Up</button>
-            <button type="submit" class="btn btn-primary" id="logOut">Log Out</button>
-
         </form>
+
+        <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
 
         <div class="row quiz">
             <div class="col-4" id="left">Form and Score</div>
@@ -62,7 +78,8 @@
 
                 <!--Button that is connected to on-click function to call API-->
                 <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                
+                <button type="print" class="btn btn-primary" id="newQuestion">New Question</button>
+
 
             </div>
         </div>
@@ -85,8 +102,21 @@
         crossorigin="anonymous"></script>
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+   <!-- AJAX Script -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Validate JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+// Login_Verification
+
+
+
+// master
     <!-- JS link for login with firebase -->
     <script src="login.js"></script>
+    <!-- JS link for API calls -->
+    <script src="app.js"></script>
 </body>
 
 </html>

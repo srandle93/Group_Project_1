@@ -1,4 +1,7 @@
-//TODO: validate form email
+//TODO: validate form email:
+
+//validate actual email exists
+
 //Firebase
 const config = {
   apiKey: "AIzaSyC8hpnmehoFY4yxN5YTkKa6eJ6LGU23ECc",
@@ -13,8 +16,7 @@ firebase.initializeApp(config);
 database = firebase.database();
 
 $(document).ready(() => {
-  $(".quiz").hide();
-  $("#logOut").hide();
+  
 
   //Click event for login button
   $("#login").click(event => {
@@ -33,6 +35,10 @@ $(document).ready(() => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
+      if (error) {
+        $("#password").val("");
+        $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('your-class');
+      }
     });
   });
   $("#signUp").click(event => {
@@ -51,12 +57,19 @@ $(document).ready(() => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
+      if (error) {
+        $("#password").val("");
+        $("#email").val("");
+        $("#email").attr("placeholder", "Email already Registered").addClass('your-class');
+      }
     });
   });
   //Logout Event
   $("#logOut").click(event => {
     event.preventDefault();
     firebase.auth().signOut();
+    $("#password").val("");
+    $("#password").attr("placeholder", "Password").removeClass("your-class");
   });
   //Verify status of login/logout
   firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -64,9 +77,23 @@ $(document).ready(() => {
       console.log(firebaseUser);
       console.log(firebaseUser.uid);
       $("#logOut").show();
+      $(".quiz").show();
+      $("#form").hide();
     } else {
       console.log("not logged in");
       $("#logOut").hide();
+      $(".quiz").hide();
+      $("#form").show();
+    }
+  });
+  //Validate form
+  $("#form").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true,
+        accept:"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}"
+      }
     }
   });
 });
