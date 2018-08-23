@@ -1,6 +1,8 @@
-//TODO: validate form email
+//TODO: validate form email:
+
 //Clear form once successfully logged in
-//multiple users on different browsers
+//password validate aka - if not correct - give message
+
 //Firebase
 const config = {
   apiKey: "AIzaSyC8hpnmehoFY4yxN5YTkKa6eJ6LGU23ECc",
@@ -15,6 +17,7 @@ firebase.initializeApp(config);
 database = firebase.database();
 
 $(document).ready(() => {
+  
 
   //Click event for login button
   $("#login").click(event => {
@@ -33,6 +36,7 @@ $(document).ready(() => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
+      
     });
   });
   $("#signUp").click(event => {
@@ -69,6 +73,16 @@ $(document).ready(() => {
       console.log("not logged in");
       $("#logOut").hide();
       $(".quiz").hide();
+    }
+  });
+  //Validate form
+  $("#form").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true,
+        accept:"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}"
+      }
     }
   });
 });
