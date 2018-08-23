@@ -18,11 +18,17 @@
     <title>Name of Application</title>
     <style>
         #email.error {
-            border: 3px solid red;
+            border: 2px dotted red;
         }
         #password.error {
-            border: 3px solid red;
+            border: 2px dotted red;
         }
+        .quiz {
+            margin-bottom: 500px;
+        }
+        .your-class::-webkit-input-placeholder {
+    color: red;
+}
     </style>
 </head>
 
@@ -47,9 +53,9 @@
             </div>
             <button type="submit" class="btn btn-primary" id="login">Log in</button>
             <button type="submit" class="btn btn-primary" id="signUp">Sign Up</button>
-            <button type="submit" class="btn btn-primary" id="logOut">Log Out</button>
-
         </form>
+
+        <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
 
         <div class="row quiz">
             <div class="col-4" id="left">Form and Score</div>
@@ -91,7 +97,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Validate JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-
     <!-- JS link for login with firebase -->
     <script src="login.js"></script>
 </body>
