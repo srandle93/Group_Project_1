@@ -24,42 +24,49 @@
 //  // Uploads user data to the database
 //   database.ref().push(newUser);
 
-  var queryURL = "https://opentdb.com/api.php?amount=10" 
-        ;
-  // var question = [];
-  // var correctAnswer = [];
-  // var incorrectAnswer = [];
+var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
+// var question = [];
+// var correctAnswer = [];
+// var incorrectAnswer = [];
 
-  var results = { question: "",
-                  correctAnswer: "",
-                  incorrectAnswer: ""
-  }
+
+var results = { question: "",
+          correctAnswer: "",
+          incorrectAnswer: ""
+}
 //  var question = queryURL.question[i];
-  // var questionBtn = document.getElementById("newQuestion");
-  
-    
-    $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response){
-  //  To gather and display question and where to display question
-    $("#newQuestion").click(function(){
-    // question = response.question;
-    // console.log(this.response)
-    $("#question-display").load(queryURL);
-    for(var i = 0; i<results.question.length; i++){
-    $("#question-display").load(queryURL);
-    
+// var questionBtn = document.getElementById("newQuestion");
 
+
+$.ajax({
+url: queryURL,
+method: "GET"
+}).then(function(response){
+
+    // Store question, correct answer, incorrect answers
+    var triviaQuestion = response.results[0].question;
+    var correctAnswer = response.results[0].correct_answer;
+    var incorrectAnswer = response.results[0].incorrect_answers;
+    var allAnswers = correctAnswer + ",".concat(incorrectAnswer);
+
+    //  To gather and display question and where to display question
+    $("#newQuestion").click(function(){
+    $("#question-display").text(triviaQuestion);
+    for(var i = 0; i < results.question.length; i++){
+    $("#question-display").text(triviaQuestion);
     }
-    });
-    
-    // To collect answer and not show it. Instead we want to 
-    // make an if else statement to add or not add points.
-    $("#submit").on("click", function(event){
-      event.preventDefult();
-      var answerDiv = $("#answerDiv").val();
-      var answer = response.answer;
-      
-    });
-  })
+
+    // Display questions in #answer-display
+    $("#answer-display").text(allAnswers);
+
+});
+
+// To collect answer and not show it. Instead we want to 
+// make an if else statement to add or not add points.
+$("#submit").on("click", function(event){
+event.preventDefult();
+var answerDiv = $("#answerDiv").val();
+var answer = response.answer;
+
+});
+})

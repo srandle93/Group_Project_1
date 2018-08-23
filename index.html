@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!--Application CSS-->
-    <!-- <link rel "stylesheet" type="text/css" href="stlye.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="stlye.css"> -->
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
     <title>Name of Application</title>
@@ -57,16 +57,16 @@
                 <h1>Let's Play!</h1>
 
                 <!--Label that does not get overwritten-->
-                <label for"question-display">Question:</label>
+                <label for="question">Question:</label>
                 
                 <!--Text with Span id that gets populated with question from API-->
                 <p><span id="question-display"></span></p>
 
                 <!--Label that does not get overwritten-->
-                <label for"answer-display">Answer:</label>
+                <label for="answer">Answer:</label>
 
                 <!--Text with Span id that gets populated with answers from API-->
-                <p><span id="answers-display">Submit</span></p>
+                <p><span id="answer-display"></span></p>
 
                 <!--Button that is connected to on-click function to call API-->
                 <button type="submit" class="btn btn-primary" id="submit">Submit</button>
@@ -79,7 +79,11 @@
     </div>
 
     <!--Footer of Application-->
-
+    <div class="card-footer text-muted">
+        <p>Name of Application</p>
+        <i class="fab fa-facebook-square" a href="http://www.facebook.com"></i>
+        <i class="fab fa-twitter-square" a href="http://www.twitter.com"></i>
+    </div>
 
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
