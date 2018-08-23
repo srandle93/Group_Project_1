@@ -13,7 +13,11 @@
         crossorigin="anonymous">
     <!--Application CSS-->
 
+    <!-- <link rel="stylesheet" type="text/css" href="stlye.css"> -->
+
+
     <link rel "stylesheet" type="text/css" href="css/style.css">
+
 
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
@@ -65,16 +69,16 @@
                 <h2>Let's Play!</h2>
 
                 <!--Label that does not get overwritten-->
-                <label for"question-display">Question:</label>
+                <label for="question">Question:</label>
                 
                 <!--Text with Span id that gets populated with question from API-->
                 <p><span id="question-display"></span></p>
 
                 <!--Label that does not get overwritten-->
-                <label for"answer-display">Answer:</label>
+                <label for="answer">Answer:</label>
 
                 <!--Text with Span id that gets populated with answers from API-->
-                <p><span id="answers-display">Submit</span></p>
+                <p><span id="answer-display"></span></p>
 
                 <!--Button that is connected to on-click function to call API-->
                 <button type="submit" class="btn btn-primary" id="submit">Submit</button>
