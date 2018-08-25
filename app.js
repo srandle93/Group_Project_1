@@ -37,6 +37,7 @@ var results = { question: "",
           correctAnswer: "",
           incorrectAnswer: ""
 }
+var score = 0;
 
 $.ajax({
 url: queryURL,
@@ -50,6 +51,8 @@ method: "GET"
     // Duplicate the incorrectAnswer array and then push the correctAnswer to it
     var allAnswers = Array.from(incorrectAnswer);
     allAnswers.push(correctAnswer);
+    allAnswers.correctAnswer = correctAnswer;
+    console.log(correctAnswer);
 
     //  Gather and display question and answers
     $("#newQuestion").click(function(){
@@ -67,31 +70,27 @@ method: "GET"
             // Give each button a class of .answer-option by creating a class in CSS and then .addClass
             $(option).addClass("answer-option");
         }
-    });
+   
 
 
 
     // On Click function to handle event when one answer button is clicked
-    $(".answer-option").on("click", function(event) {
-        // Prevent the form from trying to submit itself
-        event.preventDefault();
+        $(".answer-option").on("click", function(){
+        hurtz = $(this).text();
+        console.log(hurtz);
 
-        /*$(".answer-option").click(function () {
-            var text = $(this).text();
-            $("#input-answer").val(text);
-        });*/
+    
 
          // If correctAnswer is clicked on, add 1 point to score
-         if (".answer-option" === correctAnswer) {
-            alert("Correct!");
+         if (hurtz === correctAnswer) {
             score++;
-            updateScore();
+            console.log(score);
         } 
         // If incorrectAnswer is clicked on, alert they were wrong.
         else {
-            alert("Wrong!");
+            score--;
+            console.log(score);
         }
-        
+    })
     });
-
 });
