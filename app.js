@@ -50,13 +50,14 @@ method: "GET"
     // Duplicate the incorrectAnswer array and then push the correctAnswer to it
     var allAnswers = Array.from(incorrectAnswer);
     allAnswers.push(correctAnswer);
+    allAnswers.correctAnswer=correctAnswer;
 
     //  Gather and display question and answers
     $("#newQuestion").click(function(){
         // Gather and display question in #question-display
-        $("#question-display").text(triviaQuestion);
+        $("#question-display").html(triviaQuestion);
         for(var i = 0; i < results.question.length; i++){
-            $("#question-display").text(triviaQuestion);
+            $("#question-display").html(triviaQuestion);
         }
 
         // Display answers in #answer-display as buttons
@@ -72,24 +73,26 @@ method: "GET"
 
 
     // On Click function to handle event when one answer button is clicked
-    $(".answer-option").on("click", function(event) {
+    $("#answer-display").on("click", function(event) {
         // Prevent the form from trying to submit itself
         event.preventDefault();
 
-        /*$(".answer-option").click(function () {
-            var text = $(this).text();
-            $("#input-answer").val(text);
-        });*/
+    
+        var text = $(".answer-option").text();
+        $(".answer-option").val(text);
+        console.log(text);
+
+        
 
          // If correctAnswer is clicked on, add 1 point to score
-         if (".answer-option" === correctAnswer) {
+        if (text === allAnswers.correctAnswer) {
             alert("Correct!");
             score++;
             updateScore();
         } 
         // If incorrectAnswer is clicked on, alert they were wrong.
         else {
-            alert("Wrong!");
+           alert("Wrong!");
         }
         
     });
