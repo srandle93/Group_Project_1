@@ -56,6 +56,7 @@ method: "GET"
     // Duplicate the incorrectAnswer array and then push the correctAnswer to it
     var allAnswers = Array.from(incorrectAnswer);
     allAnswers.push(correctAnswer);
+    
 
     //  To gather and display question and where to display question
     $("#newQuestion").click(function(){
@@ -76,7 +77,7 @@ method: "GET"
 };
 
  // On Click function to handle event when one button is clicked
- $(".answer-option").on("click", function(event) {
+ $(".answer-option").on("click", function() {
     // Prevent the form from trying to submit itself
     //event.preventDefault();
 
