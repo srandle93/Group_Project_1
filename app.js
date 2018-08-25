@@ -50,6 +50,7 @@ method: "GET"
     // Duplicate the incorrectAnswer array and then push the correctAnswer to it
     var allAnswers = Array.from(incorrectAnswer);
     allAnswers.push(correctAnswer);
+    
 
     //  Gather and display question and answers
     $("#newQuestion").click(function(){
@@ -68,8 +69,6 @@ method: "GET"
             $(option).addClass("answer-option");
         }
     });
-
-
 
     // On Click function to handle event when one answer button is clicked
     $(".answer-option").on("click", function(event) {
