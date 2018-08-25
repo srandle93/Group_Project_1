@@ -1,34 +1,8 @@
-// var config = {
-//     apiKey: "AIzaSyCuQlejOJP3_nuKFmmJ08WUwrfcIvpJdPs",
-//     authDomain: "group-project1-48136.firebaseapp.com",
-//     databaseURL: "https://group-project1-48136.firebaseio.com",
-//     projectId: "group-project1-48136",
-//     storageBucket: "",
-//     messagingSenderId: "145399818320"
-//   };
-
-// firebase.initializeApp(config);
-// var database = firebase.database();
- 
-//         // Grabs user input
-//  var userAnswer = $("#answer-name-input").val().trim();
-// //  var userName = $("#userName-input").val().trim();
-// //  var userPassword = $("#password-input").val().trim();
-
-//    // Creates local "temporary" object for holding user data
-//   //  var newUser = {
-//   //   name: userName,
-//   //   password: userPassword,
-//   // };
-
-//  // Uploads user data to the database
-//   database.ref().push(newUser);
-
 var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 // var question = [];
 // var correctAnswer = [];
 // var incorrectAnswer = [];
-
+var queryURL2 = "https://robohash.org/" + email + "?set=set2";
 
 var results = { question: "",
           correctAnswer: "",
@@ -61,6 +35,28 @@ method: "GET"
 
 });
 
+
+$.ajax({
+    url: queryURL2,
+    method: "GET"
+    }).then(function (){
+        
+        const newImage = $('<img src="https://robohash.org/' + email +'.png?size=60x60">');
+
+        $("#login").on("click", function(event){
+            const emailVal = $("#email").val().trim();
+            event.preventDefault();
+            console.log(emailVal);
+            $("#avatar").append(newImage);
+            $("#emailDisplay").text(emailVal);
+            newImage.show();
+        })
+
+        $("#logOut").on("click", function(event){
+            event.preventDefault();
+            newImage.hide();
+        })
+})
 // To collect answer and not show it. Instead we want to 
 // make an if else statement to add or not add points.
 $("#submit").on("click", function(event){

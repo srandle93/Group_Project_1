@@ -44,6 +44,13 @@
             <i class="fas fa-asterisk"></i>
             Name of Application
         </a>
+        
+        <div class="nav-justify-content-end">
+            <div id="avatar"></div>
+            <div id="emailDisplay"></div>
+        </div>
+
+        
     </nav>
 
     <div class="container">
@@ -60,9 +67,11 @@
             <button type="submit" class="btn btn-primary" id="login">Log in</button>
             <button type="submit" class="btn btn-primary" id="signUp">Sign Up</button>
         </form>
-
-        <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
-
+        
+        <div>
+            <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
+            
+        </div>
         <div class="row quiz">
             <div class="col-4" id="left">Form and Score</div>
             <div class="col-8" id="right">
@@ -116,7 +125,19 @@
 
 
 
-// master
+    <script>
+        const config = {
+  apiKey: "AIzaSyC8hpnmehoFY4yxN5YTkKa6eJ6LGU23ECc",
+  authDomain: "login-1a402.firebaseapp.com",
+  databaseURL: "https://login-1a402.firebaseio.com",
+  projectId: "login-1a402",
+  storageBucket: "",
+  messagingSenderId: "295742356838"
+};
+firebase.initializeApp(config);
+
+database = firebase.database();
+    </script>
     <!-- JS link for login with firebase -->
     <script src="login.js"></script>
     <!-- JS link for API calls -->
