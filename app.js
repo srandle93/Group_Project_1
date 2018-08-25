@@ -1,14 +1,4 @@
-// var config = {
-//     apiKey: "AIzaSyCuQlejOJP3_nuKFmmJ08WUwrfcIvpJdPs",
-//     authDomain: "group-project1-48136.firebaseapp.com",
-//     databaseURL: "https://group-project1-48136.firebaseio.com",
-//     projectId: "group-project1-48136",
-//     storageBucket: "",
-//     messagingSenderId: "145399818320"
-//   };
-
-// firebase.initializeApp(config);
-// var database = firebase.database();
+database = firebase.database();
  
 //         // Grabs user input
 //  var userAnswer = $("#answer-name-input").val().trim();
