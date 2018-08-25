@@ -32,9 +32,10 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 .yashar .navbar-brand{
 
 font-family: "Gugi", cursive;
+
 }
 nav.yashar{
-background-color: #003835;
+background-color:whitesmoke;
 }
 .form-container{
 max-width: 600px;
