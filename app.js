@@ -31,18 +31,12 @@ function updateScore() {
 };
 
 var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
-// var question = [];
-// var correctAnswer = [];
-// var incorrectAnswer = [];
 
 
 var results = { question: "",
           correctAnswer: "",
           incorrectAnswer: ""
 }
-//  var question = queryURL.question[i];
-// var questionBtn = document.getElementById("newQuestion");
-
 
 $.ajax({
 url: queryURL,
@@ -58,48 +52,45 @@ method: "GET"
     allAnswers.push(correctAnswer);
     
 
-    //  To gather and display question and where to display question
+    //  Gather and display question and answers
     $("#newQuestion").click(function(){
-    $("#question-display").text(triviaQuestion);
-    for(var i = 0; i < results.question.length; i++){
-    $("#question-display").text(triviaQuestion);
-    }
+        // Gather and display question in #question-display
+        $("#question-display").text(triviaQuestion);
+        for(var i = 0; i < results.question.length; i++){
+            $("#question-display").text(triviaQuestion);
+        }
+
+        // Display answers in #answer-display as buttons
+        for(var i = 0; i < allAnswers.length; i++){
+            var option = document.createElement("button");
+            $("#answer-display").append(option);
+            option.innerText = allAnswers[i];
+            // Give each button a class of .answer-option by creating a class in CSS and then .addClass
+            $(option).addClass("answer-option");
+        }
     });
 
-    // Display questions in #answer-display as buttons
-    for(var i = 0; i < allAnswers.length; i++){
-    var option = document.createElement("button");
-    $("#answer-display").append(option);
-    option.innerText = allAnswers[i];
-    // Give each button a class of .answer-option by creating a class in CSS and then .addClass
-    $(option).addClass("answer-option");
+    // On Click function to handle event when one answer button is clicked
+    $(".answer-option").on("click", function(event) {
+        // Prevent the form from trying to submit itself
+        event.preventDefault();
 
-};
+        /*$(".answer-option").click(function () {
+            var text = $(this).text();
+            $("#input-answer").val(text);
+        });*/
 
- // On Click function to handle event when one button is clicked
- $(".answer-option").on("click", function() {
-    // Prevent the form from trying to submit itself
-    //event.preventDefault();
+         // If correctAnswer is clicked on, add 1 point to score
+         if (".answer-option" === correctAnswer) {
+            alert("Correct!");
+            score++;
+            updateScore();
+        } 
+        // If incorrectAnswer is clicked on, alert they were wrong.
+        else {
+            alert("Wrong!");
+        }
+        
+    });
 
-    $(".answer-option").click(function () {
-        var text = $(this).text();
-        $("#input-answer").val(text);
-        });
-
-        $(".submit").click(function () {
-            if ("#input-answer" === option) {
-
-            }
-        });
-    }
-
-)})
-
-    
-
-// To collect answer and not show it. Instead we want to 
-// make an if else statement to add or not add points.
-//$("#submit").on("click", function(event){
-//event.preventDefult();
-//var answerDiv = $("#answerDiv").val();
-//var answer = response.answer;
+});
