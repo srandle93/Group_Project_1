@@ -5,6 +5,39 @@
     text-align: center;
 }
 
-.fab {
-    
+#email.error {
+    border: 2px dotted red;
+}
+#password.error {
+    border: 2px dotted red;
+}
+.quiz {
+    margin-bottom: 500px;
+}
+.your-class::-webkit-input-placeholder {
+color: red;
+}
+body {
+background-color: #003835;
+}
+.navbar {
+background-color: #44836B;
+}
+.container {
+background: #44836B;
+}
+.form-group{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.yashar .navbar-brand{
+
+font-family: "Gugi", cursive;
+
+}
+nav.yashar{
+background-color:whitesmoke;
+}
+.form-container{
+max-width: 600px;
+margin: 0% auto;
 }
