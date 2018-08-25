@@ -14,6 +14,7 @@ database = firebase.database();
 //  // Uploads user data to the database
 //   database.ref().push(newUser);
 
+
 // Function to update the score
 function updateScore() {
     //document.querySelector("#score").innerHTML = "Score: " + score;
