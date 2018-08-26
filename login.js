@@ -1,12 +1,6 @@
-//TODO: validate form email:
-
-//validate actual email exists
-
-//Firebase
-
 
 $(document).ready(() => {
-  
+ 
 
   //Click event for login button
   $("#login").click(event => {
@@ -29,6 +23,7 @@ $(document).ready(() => {
         $("#password").val("");
         $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('your-class');
       }
+      
     });
   });
   $("#signUp").click(event => {

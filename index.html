@@ -16,7 +16,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="stlye.css"> -->
 
 
-    <link rel "stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
     <!-- Firebase Link -->
@@ -34,15 +34,19 @@
         }
         .your-class::-webkit-input-placeholder {
     color: red;
-}
+        }
+        .answer-option {
+            border: 2px solid gray;
+        }
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="yashar navbar navbar-light">
         <a class="navbar-brand" href="#">
             <i class="fas fa-asterisk"></i>
-            Name of Application
+            Quiz Application
         </a>
         
         <div class="nav-justify-content-end">
@@ -64,8 +68,8 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password" minlength="6">
             </div>
-            <button type="submit" class="btn btn-primary" id="login">Log in</button>
-            <button type="submit" class="btn btn-primary" id="signUp">Sign Up</button>
+            <button type="submit" class="btn btn-info" id="login">Log in</button>
+            <button type="submit" class="btn btn-info" id="signUp">Sign Up</button>
         </form>
         
         <div>
@@ -73,7 +77,7 @@
             
         </div>
         <div class="row quiz">
-            <div class="col-4" id="left">Form and Score</div>
+            <div class="col-4" id="left"></div>
             <div class="col-8" id="right">
                 <h2>Let's Play!</h2>
 
@@ -90,7 +94,6 @@
                 <p><span id="answer-display"></span></p>
 
                 <!--Button that is connected to on-click function to call API-->
-                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                 <button type="print" class="btn btn-primary" id="newQuestion">New Question</button>
 
 
@@ -105,7 +108,7 @@
         <i class="fab fa-facebook-square" a href="http://www.facebook.com"></i>
         <i class="fab fa-twitter-square" a href="http://www.twitter.com"></i>
     </div>
-
+    
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -115,29 +118,13 @@
         crossorigin="anonymous"></script>
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
    <!-- AJAX Script -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <!-- Validate JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-// Login_Verification
 
-
-
-    <script>
-        const config = {
-  apiKey: "AIzaSyC8hpnmehoFY4yxN5YTkKa6eJ6LGU23ECc",
-  authDomain: "login-1a402.firebaseapp.com",
-  databaseURL: "https://login-1a402.firebaseio.com",
-  projectId: "login-1a402",
-  storageBucket: "",
-  messagingSenderId: "295742356838"
-};
-firebase.initializeApp(config);
-
-database = firebase.database();
-    </script>
+    <!-- Firebase JS-->
+    <script src="js/firebase.js"></script>
     <!-- JS link for login with firebase -->
     <script src="login.js"></script>
     <!-- JS link for API calls -->
