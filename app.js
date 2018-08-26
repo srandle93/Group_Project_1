@@ -44,6 +44,20 @@ method: "GET"
     allAnswers.push(correctAnswer);
     allAnswers.correctAnswer = correctAnswer;
     console.log(correctAnswer);
+    //Shuffle the array of allAnswers
+    function shuffle (array) {
+        var i = 0
+          , j = 0
+          , temp = null
+      
+        for (i = array.length - 1; i > 0; i -= 1) {
+          j = Math.floor(Math.random() * (i + 1))
+          temp = array[i]
+          array[i] = array[j]
+          array[j] = temp
+        }
+      }
+      shuffle(allAnswers);
 
     //  Gather and display question and answers
     $("#newQuestion").click(function(){
@@ -57,6 +71,8 @@ method: "GET"
         for(var i = 0; i < allAnswers.length; i++){
             var option = document.createElement("button");
             $("#answer-display").append(option);
+            // Math.floor(Math.random()*allAnswers.length)
+            // allAnswers[i] = arr[Math.floor(Math.random()*allAnswers.length)];
             option.innerText = allAnswers[i];
             // Give each button a class of .answer-option by creating a class in CSS and then .addClass
             $(option).addClass("answer-option");
@@ -67,13 +83,13 @@ method: "GET"
 
     // On Click function to handle event when one answer button is clicked
         $(".answer-option").on("click", function(){
-        hurtz = $(this).text();
-        console.log(hurtz);
+        userAnswer = $(this).text();
+        console.log(userAnswer);
 
     
 
          // If correctAnswer is clicked on, add 1 point to score
-         if (hurtz === correctAnswer) {
+         if (userAnswer === correctAnswer) {
             score++;
             console.log(score);
         } 
