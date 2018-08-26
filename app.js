@@ -1,18 +1,10 @@
+
+var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
+var queryURL2 = "https://robohash.org/" + email + "?set=set2";
+
 database = firebase.database();
  
-//         // Grabs user input
-//  var userAnswer = $("#answer-name-input").val().trim();
-// //  var userName = $("#userName-input").val().trim();
-// //  var userPassword = $("#password-input").val().trim();
 
-//    // Creates local "temporary" object for holding user data
-//   //  var newUser = {
-//   //   name: userName,
-//   //   password: userPassword,
-//   // };
-
-//  // Uploads user data to the database
-//   database.ref().push(newUser);
 
 
 // Function to update the score
@@ -20,9 +12,6 @@ function updateScore() {
     //document.querySelector("#score").innerHTML = "Score: " + score;
     //add code to update score in firebase db as well
 };
-
-var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
-
 
 var results = { question: "",
           correctAnswer: "",
@@ -86,7 +75,33 @@ method: "GET"
         userAnswer = $(this).text();
         console.log(userAnswer);
 
-    
+$.ajax({
+    url: queryURL2,
+    method: "GET"
+    }).then(function (){
+        
+        const newImage = $('<img src="https://robohash.org/' + email +'.png?size=60x60">');
+
+        $("#login").on("click", function(event){
+            const emailVal = $("#email").val().trim();
+            event.preventDefault();
+            console.log(emailVal);
+            $("#avatar").append(newImage);
+            $("#emailDisplay").text(emailVal);
+            newImage.show();
+        })
+
+        $("#logOut").on("click", function(event){
+            event.preventDefault();
+            newImage.hide();
+        })
+})
+// To collect answer and not show it. Instead we want to 
+// make an if else statement to add or not add points.
+$("#submit").on("click", function(event){
+event.preventDefult();
+var answerDiv = $("#answerDiv").val();
+var answer = response.answer;
 
          // If correctAnswer is clicked on, add 1 point to score
          if (userAnswer === correctAnswer) {
@@ -101,3 +116,4 @@ method: "GET"
     })
     });
 });
+})

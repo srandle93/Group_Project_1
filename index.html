@@ -48,6 +48,13 @@
             <i class="fas fa-asterisk"></i>
             Quiz Application
         </a>
+        
+        <div class="nav-justify-content-end">
+            <div id="avatar"></div>
+            <div id="emailDisplay"></div>
+        </div>
+
+        
     </nav>
 
     <div class="container">
@@ -64,9 +71,11 @@
             <button type="submit" class="btn btn-info" id="login">Log in</button>
             <button type="submit" class="btn btn-info" id="signUp">Sign Up</button>
         </form>
-
-        <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
-
+        
+        <div>
+            <button type="submit" class="btn btn-primary float-right" id="logOut">Log Out</button>
+            
+        </div>
         <div class="row quiz">
             <div class="col-4" id="left"></div>
             <div class="col-8" id="right">
@@ -99,8 +108,7 @@
         <i class="fab fa-facebook-square" a href="http://www.facebook.com"></i>
         <i class="fab fa-twitter-square" a href="http://www.twitter.com"></i>
     </div>
-    <!-- Firebase JS-->
-    <script src="js/firebase.js"></script>
+    
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -114,6 +122,9 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Validate JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+    <!-- Firebase JS-->
+    <script src="js/firebase.js"></script>
     <!-- JS link for login with firebase -->
     <script src="login.js"></script>
     <!-- JS link for API calls -->
