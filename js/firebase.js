@@ -15,29 +15,8 @@ const config = {
           //   console.log(snapshot.val().child());
           // };
 
-    $(document).ready(() => {
     database = firebase.database();
-    
-  //  onClick function to push child with object onto user 
-      $("#login").on("click", function(event){
-          event.preventDefault();
-          const user = "user";
-          const email = $("#email")
-            .val()
-            .trim();
-
-          firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
-              // console.log(firebaseUser.uid);
-            };
-          database.ref().push({
-          //  The object
-            user: email, 
-            // UID: firebaseUser.uid
-            });
-          });
-        });
-       
+          
       
       // Shows what child is added in console. Adds email
       // value onto snapshot.
@@ -46,7 +25,7 @@ const config = {
         //   $("#email").text(snapshot.val().email);
             
         // });
-      });
+
  
     var userDataref = firebase.database().ref("user").orderByKey();
     

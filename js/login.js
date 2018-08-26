@@ -59,7 +59,6 @@ $(document).ready(() => {
   //Verify status of login/logout
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-      console.log(firebaseUser);
       console.log(firebaseUser.uid);
       $("#logOut").show();
       $(".quiz").show();

@@ -12,41 +12,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!--Application CSS-->
-
-    <!-- <link rel="stylesheet" type="text/css" href="stlye.css"> -->
-
-
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-    <title>Name of Application</title>
-    <style>
-        #email.error {
-            border: 2px dotted red;
-        }
-        #password.error {
-            border: 2px dotted red;
-        }
-        .quiz {
-            margin-bottom: 500px;
-        }
-        .your-class::-webkit-input-placeholder {
-    color: red;
-        }
-        .answer-option {
-            border: 2px solid gray;
-        }
-
-    </style>
+    <title>Quiz Mate</title>
 </head>
 
 <body>
     <nav class="yashar navbar navbar-light">
         <a class="navbar-brand" href="#">
             <i class="fas fa-asterisk"></i>
-            Quiz Application
+            Quiz Mate
         </a>
         
         <div class="nav-justify-content-end">
@@ -81,6 +59,8 @@
             <div class="col-8" id="right">
                 <h2>Let's Play!</h2>
 
+                <p>Need to add some Rules/Description of the game</p>
+
                 <!--Label that does not get overwritten-->
                 <label for="question">Question:</label>
                 
@@ -94,7 +74,7 @@
                 <p><span id="answer-display"></span></p>
 
                 <!--Button that is connected to on-click function to call API-->
-                <button type="print" class="btn btn-primary" id="newQuestion">New Question</button>
+                <button type="print" class="btn btn-primary" id="nextQuestion">Next Question</button>
 
 
             </div>
@@ -108,7 +88,9 @@
         <i class="fab fa-facebook-square" a href="http://www.facebook.com"></i>
         <i class="fab fa-twitter-square" a href="http://www.twitter.com"></i>
     </div>
-    
+
+    <!-- Firebase JS-->
+    <script src="js/firebase.js"></script>
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -122,13 +104,10 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Validate JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-
-    <!-- Firebase JS-->
-    <script src="js/firebase.js"></script>
     <!-- JS link for login with firebase -->
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
     <!-- JS link for API calls -->
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

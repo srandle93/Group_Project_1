@@ -41,3 +41,12 @@ background-color:whitesmoke;
 max-width: 600px;
 margin: 0% auto;
 }
+.answer-option {
+    border: 2px solid gray;
+}
+.green {
+	background-color: green;
+}
+.red {
+	background-color: red;
+}
