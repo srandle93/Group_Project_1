@@ -51,9 +51,9 @@ method: "GET"
     //  Gather and display question and answers
     $("#newQuestion").click(function(){
         // Gather and display question in #question-display
-        $("#question-display").text(triviaQuestion);
+        $("#question-display").html(triviaQuestion);
         for(var i = 0; i < results.question.length; i++){
-            $("#question-display").text(triviaQuestion);
+            $("#question-display").html(triviaQuestion);
         }
 
         // Display answers in #answer-display as buttons
