@@ -9,7 +9,7 @@ const config = {
     firebase.initializeApp(config);
 
       // Const user is to give the word user a variable.
-      const user = "user";
+      
       // Push child of login onto firebase
           // // database.ref(login).child(user).push().setValue("user");{
           //   console.log(snapshot.val().child());
@@ -20,20 +20,32 @@ const config = {
     
   //  onClick function to push child with object onto user 
       $("#login").on("click", function(event){
-        event.preventDefault();
-        database.ref().set({
-        //  The object
-          user: email,
-          email:true
+          event.preventDefault();
+          const user = "user";
+          const email = $("#email")
+            .val()
+            .trim();
+
+          firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+              // console.log(firebaseUser.uid);
+            };
+          database.ref().push({
+          //  The object
+            user: email, 
+            // UID: firebaseUser.uid
+            });
+          });
         });
+       
       
       // Shows what child is added in console. Adds email
       // value onto snapshot.
-        database.ref().on("child_added", function(snapshot){
-          console.log(snapshot.val().email);
-          $("#email").text(snapshot.val().email);
+        // database.ref().on("child_added", function(snapshot){
+        //   console.log(snapshot.val().email);
+        //   $("#email").text(snapshot.val().email);
             
-        });
+        // });
       });
  
     var userDataref = firebase.database().ref("user").orderByKey();
@@ -54,7 +66,7 @@ const config = {
     //   question: triviaQuestion, 
     //   answers: allAnswers
     // });
-  });
+  
     // gp = new Quiz-Group-2("login-1a402");
     // sampleGroup = {emailVal:"", newImage:""};
 
