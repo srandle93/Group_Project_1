@@ -118,8 +118,6 @@ $.ajax({
     method: "GET"
     }).then(function (){
         $("#login").on("click", function(event){
-           
-            
 
             let emailVal = $("#email").val().trim().split("@")[0];
 
@@ -129,9 +127,7 @@ $.ajax({
             
             console.log(emailVal);
             $("#avatar").append(newImage);
-            $("#emailDisplay").append(emailVal);
             $("#avatar").show(newImage);
-           // $("#emailDisplay").show();
             $("#score").show();
         })
 
@@ -140,20 +136,15 @@ $.ajax({
 
             let newImage = $('<img src="https://robohash.org/' + emailVal +'.png?size=60x60">');
 
-            var score = 0;
-
             event.preventDefault();
             console.log(emailVal);
             $("#avatar").append(newImage);
-            $("#emailDisplay").text(emailVal);
-            $("#emailDisplay").show();
             $("#score").show();
         })
 
         $("#logOut").on("click", function(event){
             event.preventDefault();
             $("#avatar").empty();
-            $("#emailDisplay").hide();
             $("#score").empty();
         })
 })

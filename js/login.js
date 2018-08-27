@@ -46,6 +46,7 @@ $(document).ready(() => {
         $("#password").val("");
         $("#email").val("");
         $("#email").attr("placeholder", "Email already Registered").addClass('form-val');
+        $("#avatar").empty();
       }
     });
   });
