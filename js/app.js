@@ -9,10 +9,13 @@ let results = { question: "",
           correctAnswer: "",
           incorrectAnswer: ""
         }
+//let user = "";
 
 const queryURL2 = "https://robohash.org/" + email + "?set=set2";
 const queryURL = "https://opentdb.com/api.php?amount=1&type=multiple";
-
+database.ref().set({
+    score: score
+});
 
 //Generate a question with answers
 const questions = () => {
@@ -73,6 +76,9 @@ const questions = () => {
         //If correctAnswer is clicked on, add 1 point to score
          if (userAnswer === correctAnswer) {
             score++;
+            database.ref().set({
+                score: score
+            });
             console.log(score);
             $(this).addClass("green");
             $(".answer-option").off('click');
@@ -83,6 +89,9 @@ const questions = () => {
         // If incorrectAnswer is clicked on, alert they were wrong.
         else {
             score--;
+            database.ref().set({
+                score: score
+            });
             console.log(score);
             $(this).addClass("red");
             $(".correct").addClass("green");
@@ -145,3 +154,23 @@ $.ajax({
             $("#emailDisplay").hide();
         })
 })
+
+const userScore = ref().child("score");
+
+userScore.on("value", function(snapshot) {
+    if (snapshot.child("score").exists())
+        score = snapshot.val().score
+        $("#score").text(snapshot.val().score);
+        console.log(snapshot.val().score);
+})
+
+function userData(email, score) {
+    firebase.database().ref("users/" + email).set({
+        email: email,
+        score: score
+    });
+}
+
+
+
+

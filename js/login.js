@@ -1,6 +1,5 @@
 
 $(document).ready(() => {
- 
 
   //Click event for login button
   $("#login").click(event => {
@@ -12,6 +11,10 @@ $(document).ready(() => {
     const pass = $("#password")
       .val()
       .trim();
+    database.ref().set({
+      email: email
+    });
+  
     const auth = firebase.auth();
     //Auth for Signing in
     auth.signInWithEmailAndPassword(email, pass).catch(function(error) {
@@ -80,4 +83,12 @@ $(document).ready(() => {
       }
     }
   });
+
+
+userInfo.on("value", function(snap) {
+    if (snap.child("userInfo").exists())
+        email = snap.val().email
+        $("#email").text(snap.val().email);
+        console.log(snap.val().email);
+})
 });
