@@ -76,7 +76,7 @@ $(document).ready(() => {
       email: {
         required: true,
         email: true,
-        accept:"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}"
+        accept: "/^[\w-.+]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/"
       }
     }
   });

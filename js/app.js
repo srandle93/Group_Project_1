@@ -74,6 +74,8 @@ const questions = () => {
          if (userAnswer === correctAnswer) {
             score++;
             console.log(score);
+            $("#score").empty(score);
+            $("#score").append(score);
             $(this).addClass("green");
             $(".answer-option").off('click');
             $("#nextQuestion").show();
@@ -84,6 +86,8 @@ const questions = () => {
         else {
             score--;
             console.log(score);
+            $("#score").empty(score);
+            $("#score").append(score);
             $(this).addClass("red");
             $(".correct").addClass("green");
             $(".answer-option").off('click');
@@ -114,16 +118,21 @@ $.ajax({
     method: "GET"
     }).then(function (){
         $("#login").on("click", function(event){
+           
+            
+
             let emailVal = $("#email").val().trim().split("@")[0];
 
             let newImage = $('<img src="https://robohash.org/' + emailVal +'.png?size=60x60">');
 
             event.preventDefault();
+            
             console.log(emailVal);
             $("#avatar").append(newImage);
-            $("#emailDisplay").text(emailVal);
-            newImage.show();
-            $("#emailDisplay").show();
+            $("#emailDisplay").append(emailVal);
+            $("#avatar").show(newImage);
+           // $("#emailDisplay").show();
+            $("#score").show();
         })
 
         $("#signUp").on("click", function(event){
@@ -131,17 +140,20 @@ $.ajax({
 
             let newImage = $('<img src="https://robohash.org/' + emailVal +'.png?size=60x60">');
 
+            var score = 0;
+
             event.preventDefault();
             console.log(emailVal);
             $("#avatar").append(newImage);
             $("#emailDisplay").text(emailVal);
-            newImage.show();
             $("#emailDisplay").show();
+            $("#score").show();
         })
 
         $("#logOut").on("click", function(event){
             event.preventDefault();
             $("#avatar").empty();
             $("#emailDisplay").hide();
+            $("#score").empty();
         })
 })
