@@ -113,20 +113,35 @@ $.ajax({
     url: queryURL2,
     method: "GET"
     }).then(function (){
-        
-        const newImage = $('<img src="https://robohash.org/' + email +'.png?size=60x60">');
-
         $("#login").on("click", function(event){
-            const emailVal = $("#email").val().trim();
+            let emailVal = $("#email").val().trim().split("@")[0];
+
+            let newImage = $('<img src="https://robohash.org/' + emailVal +'.png?size=60x60">');
+
             event.preventDefault();
             console.log(emailVal);
             $("#avatar").append(newImage);
             $("#emailDisplay").text(emailVal);
             newImage.show();
+            $("#emailDisplay").show();
+        })
+
+        $("#signUp").on("click", function(event){
+            let emailVal = $("#email").val().trim().split("@")[0];
+
+            let newImage = $('<img src="https://robohash.org/' + emailVal +'.png?size=60x60">');
+
+            event.preventDefault();
+            console.log(emailVal);
+            $("#avatar").append(newImage);
+            $("#emailDisplay").text(emailVal);
+            newImage.show();
+            $("#emailDisplay").show();
         })
 
         $("#logOut").on("click", function(event){
             event.preventDefault();
-            newImage.hide();
+            $("#avatar").empty();
+            $("#emailDisplay").hide();
         })
 })

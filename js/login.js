@@ -21,7 +21,7 @@ $(document).ready(() => {
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
       if (error) {
         $("#password").val("");
-        $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('your-class');
+        $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('form-val');
       }
       
     });
@@ -45,7 +45,7 @@ $(document).ready(() => {
       if (error) {
         $("#password").val("");
         $("#email").val("");
-        $("#email").attr("placeholder", "Email already Registered").addClass('your-class');
+        $("#email").attr("placeholder", "Email already Registered").addClass('form-val');
       }
     });
   });
@@ -54,7 +54,7 @@ $(document).ready(() => {
     event.preventDefault();
     firebase.auth().signOut();
     $("#password").val("");
-    $("#password").attr("placeholder", "Password").removeClass("your-class");
+    $("#password").attr("placeholder", "Password").removeClass("form-val");
   });
   //Verify status of login/logout
   firebase.auth().onAuthStateChanged(firebaseUser => {
