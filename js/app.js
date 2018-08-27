@@ -11,10 +11,12 @@ let results = { question: "",
         }
 
 const queryURL2 = "https://robohash.org/" + email + "?set=set2";
-const queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
+const queryURL = "https://opentdb.com/api.php?amount=1&type=multiple";
+
+
 //Generate a question with answers
 const questions = () => {
-        
+        $("#nextQuestion").hide();
 
 
         $.ajax({
@@ -100,7 +102,7 @@ const nextQuestion = () => {
         $("#answer-display").empty();
         $("#question-display").empty();
         questions().remove();
-
+    
     })
 };
 
