@@ -1,133 +1,132 @@
 /* Style Sheet for the Footer of Group Project One */
 /* Main CSS */
 body {
-    background-color: #003835;
-    }
-    .navbar {
-    background-color: #44836B;
-    }
-    .container {
-    background: #44836B;
-    text-align: center;
-    }
-    
-    .yashar .navbar-brand  {
-    font-family: "Gugi";
-    }
-    
-    nav.yashar{
-    background-color:whitesmoke;
-    }
-    
-    .header {
-        font-size: 30px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
+  background-color: #003835;
+}
+.navbar {
+  background-color: #44836b;
+}
+.container {
+  background: #44836b;
+  text-align: center;
+}
 
-    .h5 {
-        font-size: 20px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-align: center;
-    }
-    
-    
-    /* Validation CSS */
-    #email.error {
-        border: 2px dotted red;
-    }
-    #password.error {
-        border: 2px dotted red;
-    }
-    .form-val::-webkit-input-placeholder {
-    color: red;
-    font-size: 15px;
-    }
-    
-    /* Form CSS */
-    .form-group{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    
-    .form-container{
-    max-width: 600px;
-    margin: 0% auto;
-    }
-    
-    #form {
-        margin: 100px auto;
-        padding: 50px;
-        width: 75%;
-    }
-    
-    #logOut, #login, #signUp {
-        margin: 10px;
-        font-family: "Arial Black", Gadget, sans-serif;
-        font-size: 15px;
-        padding: 15px;
-        text-align: center;
-        color: #000;
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        cursor: pointer;
-        border-radius: 25px;
-        background-color: #669999;
-    }
-    
-    /* Quiz CSS */
-    .quiz {
-        margin: 100px auto;
-        padding: 50px;
-    }
-    
-    .answer-option {
-        margin: 10px;
-        font-family: "Arial Black", Gadget, sans-serif;
-        padding: 15px;
-        text-align: center;
-        transition: 0.5s;
-        background-size: 200% auto;
-        color: #000;
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        width: 80%;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        cursor: pointer;
-        display: inline-block;
-        border-radius: 25px;
-        background-color: #99ff66;
-    }
-    .green {
-        background-color: green;
-    }
-    
-    .red {
-        background-color: red;
-    }
-    
-    #nextQuestion {
-        margin: 10px auto;
-        font-family: "Arial Black", Gadget, sans-serif;
-        padding: 15px;
-        text-align: center;
-        color: #000;
-        box-shadow: 0 0 20px #eee;
-        border-radius: 10px;
-        width: 80%;
-        cursor: pointer;
-        border-radius: 25px;
-        background-color: #669999;
-    }
-    
-    #question-display {
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        font-weight: bold;
-        font-size: 45px;
-        font-style: italic;
-    }
-    
-    
-    
-    /* Footer */
-    .card-footer {
-        text-align: center;
-    }
+.yashar .navbar-brand {
+  font-family: "Gugi";
+}
+
+nav.yashar {
+  background-color: whitesmoke;
+}
+
+.header {
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.h5 {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+
+/* Validation CSS */
+#email.error {
+  border: 2px dotted red;
+}
+#password.error {
+  border: 2px dotted red;
+}
+.form-val::-webkit-input-placeholder {
+  color: red;
+  font-size: 15px;
+}
+
+/* Form CSS */
+.form-group {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0% auto;
+}
+
+#form {
+  margin: 100px auto;
+  padding: 50px;
+  width: 75%;
+}
+
+#logOut,
+#login,
+#signUp {
+  margin: 10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #669999;
+}
+
+/* Quiz CSS */
+.quiz {
+  margin: 100px auto;
+  padding: 50px;
+}
+
+.answer-option {
+  margin: 10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  padding: 15px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #000;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 80%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+  background-color: #99ff66;
+}
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+#nextQuestion {
+  margin: 10px auto;
+  font-family: "Arial Black", Gadget, sans-serif;
+  padding: 15px;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 80%;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #669999;
+}
+
+#question-display {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  font-style: italic;
+}
+
+/* Footer */
+.card-footer {
+  text-align: center;
+}
