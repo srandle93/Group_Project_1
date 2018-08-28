@@ -6,6 +6,9 @@ body {
 .navbar {
   background-color: #44836b;
 }
+.mainTitle {
+  font-size: 50px;
+}
 .container {
   background: #44836b;
   text-align: center;
@@ -13,10 +16,12 @@ body {
 
 .yashar .navbar-brand {
   font-family: "Gugi";
+  color: whitesmoke;
 }
 
 nav.yashar {
-  background-color: whitesmoke;
+  background-color: grey;
+  color: whitesmoke;
 }
 
 .header {
@@ -24,7 +29,7 @@ nav.yashar {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.h5 {
+h5 {
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
