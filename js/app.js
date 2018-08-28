@@ -133,6 +133,7 @@ $(document).ready(() => {
       event.preventDefault();
       $("#avatar").empty();
       $("#score").empty();
+      score=0;
     });
   });
 });
