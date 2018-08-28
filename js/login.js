@@ -45,7 +45,7 @@ $(document).ready(() => {
         $("#password").val("");
         $("#email").val("");
         $("#email")
-          .attr("placeholder", "Email already Registered")
+          .attr("placeholder", "Email Already Registered OR Invalid Email")
           .addClass("form-val");
         $("#avatar").empty();
       }
