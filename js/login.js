@@ -1,7 +1,4 @@
-
 $(document).ready(() => {
- 
-
   //Click event for login button
   $("#login").click(event => {
     event.preventDefault();
@@ -21,9 +18,11 @@ $(document).ready(() => {
       console.log(`Error Code: ${errorCode} : Message : ${errorMessage}`);
       if (error) {
         $("#password").val("");
-        $("#password").attr("placeholder", "Incorrect Password OR Email not Registered").addClass('form-val');
+        $("#password")
+          .attr("placeholder", "Incorrect Password OR Email not Registered")
+          .addClass("form-val");
+        $("#avatar").empty();
       }
-      
     });
   });
   $("#signUp").click(event => {
@@ -45,7 +44,9 @@ $(document).ready(() => {
       if (error) {
         $("#password").val("");
         $("#email").val("");
-        $("#email").attr("placeholder", "Email already Registered").addClass('form-val');
+        $("#email")
+          .attr("placeholder", "Email already Registered")
+          .addClass("form-val");
         $("#avatar").empty();
       }
     });
@@ -55,17 +56,17 @@ $(document).ready(() => {
     event.preventDefault();
     firebase.auth().signOut();
     $("#password").val("");
-    $("#password").attr("placeholder", "Password").removeClass("form-val");
+    $("#password")
+      .attr("placeholder", "Password")
+      .removeClass("form-val");
   });
   //Verify status of login/logout
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-      console.log(firebaseUser.uid);
       $("#logOut").show();
       $(".quiz").show();
       $("#form").hide();
     } else {
-      console.log("not logged in");
       $("#logOut").hide();
       $(".quiz").hide();
       $("#form").show();
@@ -77,7 +78,7 @@ $(document).ready(() => {
       email: {
         required: true,
         email: true,
-        accept: "/^[\w-.+]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/"
+        accept: "/^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/"
       }
     }
   });
