@@ -126,6 +126,17 @@ $.ajax({
             event.preventDefault();
             
             console.log(emailVal);
+            // Clear localStorage
+            localStorage.clear();
+
+            // Store avatar into localStorage
+            localStorage.setItem("avatar", newImage);
+
+            // By default display the content from localStorage
+            $("#avatar").html(localStorage.getItem("avatar"));
+
+
+
             $("#avatar").append(newImage);
             $("#avatar").show(newImage);
             $("#score").show();
